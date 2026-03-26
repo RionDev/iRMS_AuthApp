@@ -24,16 +24,16 @@
 
 ## 상세 정책
 
-| 정책 | 경로 | 내용 |
-|------|------|------|
-| 컴포넌트 | `common/docs/components.md` | 공통 UI 컴포넌트 사용법 |
-| 인증 | `common/docs/auth.md` | 토큰 관리, 인증 훅 사용법 |
-| API 클라이언트 | `common/docs/api-client.md` | Axios 인스턴스, 인터셉터 |
-| 상태 관리 | `common/docs/stores.md` | Zustand store 규칙 |
+| 정책           | 경로                        | 내용                      |
+| -------------- | --------------------------- | ------------------------- |
+| 컴포넌트       | `common/docs/components.md` | 공통 UI 컴포넌트 사용법   |
+| 인증           | `common/docs/auth.md`       | 토큰 관리, 인증 훅 사용법 |
+| API 클라이언트 | `common/docs/api-client.md` | Axios 인스턴스, 인터셉터  |
+| 상태 관리      | `common/docs/stores.md`     | Zustand store 규칙        |
 
 ## BE API 대응
 
-| 서비스 함수 | 엔드포인트 | 메서드 | BE 대응 |
-|-------------|-----------|--------|---------|
-| `changePassword` | `/api/auth/change-password` | POST | `service.py → change_user_password` |
-| `getMe` | `/api/auth/me` | GET | `service.py → get_vuser_by_idx` |
+| 서비스 함수      | 엔드포인트                  | 메서드 | BE 대응                             |
+| ---------------- | --------------------------- | ------ | ----------------------------------- |
+| `changePassword` | `/api/auth/change-password` | POST   | `service.py → change_user_password` |
+| `getMe`          | `/api/auth/me`              | GET    | `service.py → get_vuser_by_idx`     |
