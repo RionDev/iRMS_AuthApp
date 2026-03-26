@@ -1,17 +1,18 @@
 services:
-  auth-fe:
+  auth:
     build: .
     image: irms-fe-auth
     container_name: irms-fe-auth
-    labels:
-      - "project=iRMS"
-      - "layer=FE"
-      - "service=auth"
     ports:
-      - "3001:80"
+      - "3001:3001"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    env_file:
+      - .env
     networks:
       - irms_net
 
 networks:
   irms_net:
-    external: true
+    name: irms_net
