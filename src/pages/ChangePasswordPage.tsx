@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Layout } from '@common/components/Layout';
 import { useAuth } from '@common/hooks/useAuth';
+import { theme } from '@common/styles/theme';
 import { PasswordForm } from '../components/PasswordForm';
+import { authNavItems } from '../navigation';
 import { changePassword } from '../services/authService';
 
 export function ChangePasswordPage() {
@@ -23,22 +25,23 @@ export function ChangePasswordPage() {
   if (!user) return null;
 
   return (
-    <Layout title="비밀번호 변경">
+    <Layout title="비밀번호 변경" sideNavItems={authNavItems}>
       <div
         style={{
-          backgroundColor: '#fff',
+          backgroundColor: theme.colors.surface,
           padding: '24px',
-          borderRadius: '8px',
+          borderRadius: theme.radius.md,
           maxWidth: '400px',
+          boxShadow: theme.shadow.card,
         }}
       >
         <h2 style={{ marginTop: 0 }}>비밀번호 변경</h2>
-        <p style={{ color: '#666', fontSize: '14px' }}>
+        <p style={{ color: theme.colors.textMuted, fontSize: '14px' }}>
           현재 사용자: {user.name} ({user.id})
         </p>
         <PasswordForm onSubmit={handleSubmit} />
-        {message && <p style={{ color: '#2e7d32', marginTop: '12px' }}>{message}</p>}
-        {error && <p style={{ color: '#d32f2f', marginTop: '12px' }}>{error}</p>}
+        {message && <p style={{ color: theme.colors.success, marginTop: '12px' }}>{message}</p>}
+        {error && <p style={{ color: theme.colors.danger, marginTop: '12px' }}>{error}</p>}
       </div>
     </Layout>
   );

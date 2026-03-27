@@ -38,7 +38,7 @@ cp .env.example .env
 
 ```bash
 npm install
-npm run dev        # http://localhost:3001
+npm run dev        # http://localhost:3001/auth/
 ```
 
 ## 테스트
@@ -58,6 +58,8 @@ npm run preview    # 빌드 결과 미리보기
 ## Docker
 
 ```bash
-docker compose up -d    # 포트 3001
+docker compose up -d    # http://localhost:3001/auth/
 docker compose down
 ```
+
+루트 gateway를 함께 띄운 경우 권장 진입점은 `http://localhost:3000/auth/`다.

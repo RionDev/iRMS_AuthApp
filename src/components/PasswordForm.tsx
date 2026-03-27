@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { FormEvent } from 'react';
 import { Input } from '@common/components/Input';
 import { Button } from '@common/components/Button';
+import { theme } from '@common/styles/theme';
 
 interface PasswordFormProps {
   onSubmit: (currentPassword: string, newPassword: string) => void;
@@ -50,6 +51,7 @@ export function PasswordForm({ onSubmit }: PasswordFormProps) {
       <Button type="submit" style={{ width: '100%' }}>
         변경하기
       </Button>
+      {error && <p style={{ color: theme.colors.danger, marginTop: '12px' }}>{error}</p>}
     </form>
   );
 }
