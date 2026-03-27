@@ -5,7 +5,12 @@ import { authRoutes } from './routes';
 
 function AuthEntryRedirect() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
-  return <Navigate to={isAuthenticated ? '/auth/password' : '/login'} replace />;
+  return (
+    <Navigate
+      to={isAuthenticated ? '/auth/password' : '/login?redirect=/auth/password'}
+      replace
+    />
+  );
 }
 
 export function App() {
