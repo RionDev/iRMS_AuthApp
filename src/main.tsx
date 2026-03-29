@@ -8,7 +8,7 @@ useAuthStore.getState().initialize();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/auth">
       <App />
     </BrowserRouter>
   </React.StrictMode>,

@@ -7,7 +7,7 @@ function AuthEntryRedirect() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
   return (
     <Navigate
-      to={isAuthenticated ? '/auth/password' : '/login?redirect=/auth/password'}
+      to={isAuthenticated ? '/password' : '/login?redirect=/auth/password'}
       replace
     />
   );
@@ -17,10 +17,9 @@ export function App() {
   return (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/auth/login" element={<LoginPage />} />
-      <Route path="/auth" element={<AuthEntryRedirect />} />
-      <Route path="/auth/*" element={authRoutes} />
-      <Route path="*" element={<Navigate to="/auth/password" replace />} />
+      <Route path="/" element={<AuthEntryRedirect />} />
+      <Route path="/*" element={authRoutes} />
+      <Route path="*" element={<Navigate to="/password" replace />} />
     </Routes>
   );
 }
