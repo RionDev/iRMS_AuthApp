@@ -7,6 +7,6 @@ export async function changePassword(data: ChangePasswordRequest): Promise<void>
 }
 
 export async function getMe(): Promise<VUser> {
-  const res = await apiClient.get<VUser>('/api/auth/me');
+  const res = await apiClient.get<VUser>('/api/user/me');
   return res.data;
 }

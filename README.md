@@ -37,29 +37,6 @@ cp .env.example .env
 ## 실행
 
 ```bash
-npm install
-npm run dev        # http://localhost:3001/auth/
-```
-
-## 테스트
-
-```bash
-npm test           # 단일 실행
-npm run test:watch # watch 모드
-```
-
-## 빌드
-
-```bash
-npm run build      # dist/ 생성
-npm run preview    # 빌드 결과 미리보기
-```
-
-## Docker
-
-```bash
 docker compose up -d    # http://localhost:3001/auth/
 docker compose down
 ```
-
-루트 gateway를 함께 띄운 경우 권장 진입점은 `http://localhost:3000/auth/`다.
